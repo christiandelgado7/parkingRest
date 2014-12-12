@@ -37,18 +37,18 @@ La API debe responder sobre el recurso parking con los siguientes datos:
 
 Servicios
 =========
-Se implementaron servicios REST con el CRUD de la central de Parking, asi como tambien se implementaron 
-otras las operaciones solicitadas.
+Se implementaron servicios REST con el CRUD de la central de Parking, así como tambien otras las 
+operaciones solicitadas en el ejercicio.
 
 
 CRUD
 ----
 
 ###Create Parking
-Devuelve el Parking insertado
-
-```js
+```
 POST http://localhost:8085/api/parking
+```
+```js
 raw:
     {
         "name": "Parking Test", 
@@ -70,18 +70,23 @@ raw:
     }
 ```
 
+Devuelve el Parking insertado
+
+
 ###Read Parking
-Devuelve el Parking con el Id solicitado
 
 ```
 GET http://localhost:8085/api/parking/0
 ```
 
-###Update Parking
-Devuelve el Parking modificado
+Devuelve el Parking con el Id solicitado
 
-```js
+###Update Parking
+
+```
 PUT http://localhost:8085/api/parking/0
+```
+```js
 raw:
     {
         "name": "Parking New Name",
@@ -96,19 +101,19 @@ raw:
         ]
     }
 ```
+Devuelve el Parking modificado
 
 ###Delete Parking
-Devuelve el Parking eliminado
 
 ```
 DELETE http://localhost:8085/api/parking/0
 ```
 
+Devuelve el Parking eliminado
+
 
 Search Parking
 --------------
-
-Devuelve una lista de Parkings que cumplan con los filtros de busqueda
 
 ###Parametros
 - `complete`: Booleano que representa si se desea filtrar los Parkings llenos
@@ -120,6 +125,9 @@ encoding *%23*
 ```
 GET http://localhost:8085/api/parking/search?complete=false&date=09.12.2014%2315&latitude=41.385&longitude=2.165&distance=0.6
 ```
+
+Devuelve una lista de Parkings que cumplan con los filtros de busqueda
+
 
 Modificar Plazas
 ---------------
