@@ -76,7 +76,7 @@ Devuelve el Parking insertado
 ###Read Parking
 
 ```
-GET http://localhost:8085/api/parking/0
+GET http://localhost:8085/api/parking/{parkingId}
 ```
 
 Devuelve el Parking con el Id solicitado
@@ -84,7 +84,7 @@ Devuelve el Parking con el Id solicitado
 ###Update Parking
 
 ```
-PUT http://localhost:8085/api/parking/0
+PUT http://localhost:8085/api/parking/{parkingId}
 ```
 ```js
 raw:
@@ -106,7 +106,7 @@ Devuelve el Parking modificado
 ###Delete Parking
 
 ```
-DELETE http://localhost:8085/api/parking/0
+DELETE http://localhost:8085/api/parking/{parkingId}
 ```
 
 Devuelve el Parking eliminado
@@ -123,7 +123,7 @@ encoding *%23*
 - `latitude, longitude, distance`: valores doubles que representan un area circular, filtrará a los Parkings que se encuentren en el radio definido por la distancia (en kilometros) y las coordenadas GPS del centro del circulo.
 
 ```
-GET http://localhost:8085/api/parking/search?complete=false&date=09.12.2014%2315&latitude=41.385&longitude=2.165&distance=0.6
+GET http://localhost:8085/api/parking/search?complete=false&date=20.12.2014%2315&latitude=41.385&longitude=2.165&distance=0.6
 ```
 
 Devuelve una lista de Parkings que cumplan con los filtros de busqueda
@@ -134,11 +134,11 @@ Modificar Plazas
 
 ###Liberar una plaza
 ```
-GET http://localhost:8085/api/parking/0/releasePlace
+GET http://localhost:8085/api/parking/{parkingId}/releasePlace
 ```
 ###Ocupar una plaza
 ```
-GET http://localhost:8085/api/parking/0/takePlace
+GET http://localhost:8085/api/parking/{parkingId}/takePlace
 ```
 
 Ambos metodos devuelven el número de plazas libres para el Parking solicitado
